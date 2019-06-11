@@ -73,7 +73,9 @@ public class DemoApplication extends Application {
 
   /** Returns a {@link HttpDataSource.Factory}. */
   public HttpDataSource.Factory buildHttpDataSourceFactory() {
-    return new DefaultHttpDataSourceFactory(userAgent);
+    DefaultHttpDataSourceFactory factory = new DefaultHttpDataSourceFactory(userAgent);
+    factory.getDefaultRequestProperties().set("Authorization", "Bearer eyJxc3BhY2VfaWQiOiJpc3BjMzZzM3V3WTl2b1R4NmdYY1hFTm40S2ZZMjlmQyIsInFsaWJfaWQiOiJpbGliNFU4NE5DVnZvVkg1MTI0OWRGRG9iajJaZlpySyIsImFkZHIiOiIweGMzNjBlNDhlZjQ0ODRjNjg3ZWFBNGVhNDg5MDFhQUQ0MWREQzA3RTAiLCJxaWQiOiJpcV9fY2hYZVVKbmt4eVI4NGZHdDlmbXIyakZueE1HIiwiZ3JhbnQiOiJyZWFkIiwidHhfcmVxdWlyZWQiOmZhbHNlLCJpYXQiOjE1NTk2ODMyOTksImV4cCI6MTU2MjI3NTI5OSwiYXV0aF9zaWciOiJFUzI1NktfTGZwbVpCZUZNUmlSZml4UGs3eDdIRTUya1FOUVdKcERRZkNDR0pleTZFelR5aGhZdmdKWjE0YW5uc3hBbmR3eVdQb01CUDlNS3l0NzdaUmU1WkFkQ0UzbkciLCJhZmdoX3BrIjoiIn0=.RVMyNTZLX0tERE1wQUc4ZFBudmFpTGU5QWRKRHVYdFdGc1ZNb1cxZll1REFTclREWm14dHdXU2k4OUx1Zkw0all5YWVOZnk4WXBzYldQaGloY2g1c25lRHlmTGhkYnRq");
+    return factory;
   }
 
   /** Returns whether extension renderers should be used. */
